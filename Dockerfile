@@ -5,6 +5,9 @@ LABEL org.opencontainers.image.source https://github.com/hoto17296/docker-jupyte
 USER root
 ENV GRANT_SUDO 1
 
+# Launch Jupyter Lab
+ENV JUPYTER_ENABLE_LAB 1
+
 # Install Japanese Font
 RUN apt-get update \
  && apt-get install -y fonts-takao-gothic \
