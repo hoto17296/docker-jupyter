@@ -22,3 +22,7 @@ ADD matplotlibrc /home/jovyan/.config/matplotlib/matplotlibrc
 # Support Google Colaboratory
 RUN pip install jupyter_http_over_ws \
  && jupyter serverextension enable --py jupyter_http_over_ws
+
+# Fix permission
+RUN mkdir -p /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/shortcuts-extension/ \
+ && chown -R jovyan:users /home/jovyan/.jupyter
